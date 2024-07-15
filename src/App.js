@@ -13,13 +13,13 @@ function App() {
 
   const fetchProducts = async () => {
     const { data } = await axios.get("https://dummyjson.com/products");
-
+    console.log("data=>", data);
     dispatch({
       type: "ADD_PRODUCTS",
       payload: data.products,
     });
   };
-
+  console.log(state);
   useEffect(() => {
     fetchProducts();
   }, []);
